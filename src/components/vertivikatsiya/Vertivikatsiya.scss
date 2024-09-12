@@ -1,0 +1,16 @@
+.wrapper_vertivikatsiya{
+ position: fixed;
+ top: 50%;
+ left: 50%;
+ transform: translate(-50%, -50%);
+
+ 
+    form{
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        width: 500px;
+        margin-top: 25px;
+    }
+   
+}
