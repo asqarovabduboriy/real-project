@@ -1,0 +1,76 @@
+.admin {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    transition: 0.3s;
+    &__header {
+      display: flex;
+      padding: 30px;
+      justify-content: space-between;
+    }
+  }
+  .admin.close {
+    grid-template-columns: 74px 1fr;
+    .sidebar__logo,
+    .sidebar__link {
+      padding: 10px;
+      gap: 24px;
+    }
+  
+    .sidebar__item{
+      button{
+        padding: 10px;
+        
+        p{
+          display: none;
+        }
+      }
+    }
+  
+    .wrapper {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+  
+
+  .product-form{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 500px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    border-radius: 10px;
+    padding: 20px;
+  }
+  
+  .image-preview-container {
+    position: relative;
+  
+    svg {
+      position: absolute;
+      top: -5px;
+      left: 90px;
+      font-size: 20px;
+      color: red;
+      cursor: pointer;
+    }
+  }
+  .sidebar__item {
+    button {
+      padding: 10px 40px;
+      background-color: #ccc;
+      border-radius: 10px;
+      border: none;
+      color: #4e4e4e;
+      margin-top: 10px;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+  
+      svg{
+          font-size: 20px;
+      }
+    }
+  }
+  

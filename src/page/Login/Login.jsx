@@ -5,6 +5,7 @@ import axios from "axios";
 import { useGetvaleinput } from "../../Hook/useGetvaleinput"; // Hook joylashgan joyiga ko'ra import qilish
 import { useNavigate } from "react-router-dom";
 
+
 const initialLoginState = {
   username: "",
   password: "",
@@ -61,7 +62,7 @@ const LoginRegisterVerification = () => {
       .then((response) => {
         setMessage("Login successful!");
         localStorage.setItem("token",response.data.AccessToken);
-        navigate("/home")
+        navigate("/admin/dashboard")
         setError("");
       })
       .catch((error) => {
@@ -86,10 +87,6 @@ const LoginRegisterVerification = () => {
 
   return (
     <div>
-      {/* <Typography variant="h4">
-        {view === "login" ? "Login" : view === "register" ? "Register" : "Email Verification"}
-      </Typography> */}
-
       {view === "login" && (
         <form onSubmit={handleLogin} className="login_wrapper">
           <Typography variant="h5">Login</Typography>
