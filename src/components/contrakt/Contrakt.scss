@@ -1,0 +1,88 @@
+.statust {
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: blue;
+  opacity: 0.5;
+  border-radius: 10px;
+
+  span {
+    color: #fff;
+    font-weight: 500;
+    font-size: 14px;
+    text-transform: capitalize;
+    font-family: "Roboto", sans-serif;
+  }
+}
+
+.card_contrakt {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  gap: 10px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  margin-bottom: 10px;
+  border-radius: 10px;
+
+  h3 {
+    font-size: 16px;
+    font-weight: 500;
+    font-family: "Roboto", sans-serif;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    p{
+        font-size: 14px;
+        font-weight: 400;
+        font-family: "Roboto", sans-serif;
+        color: red;
+    }
+  }
+
+  span {
+    font-size: 14px;
+    font-weight: 400;
+    font-family: "Roboto", sans-serif;
+  }
+}
+
+.wrapper_contract {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.statust_pending {
+  background-color: orange;
+  opacity: 0.5;
+  color: #fff;
+  padding: 10px;
+  border-radius: 10px;
+
+  span {
+    color: #fff;
+    font-weight: 500;
+    font-size: 14px;
+    text-transform: capitalize;
+    font-family: "Roboto", sans-serif;
+  }
+}
+
+.statust_canceled {
+  background-color: red;
+  opacity: 0.5;
+  color: #fff;
+  padding: 10px;
+  border-radius: 10px;
+
+  span {
+    color: #fff;
+    font-weight: 500;
+    font-size: 14px;
+    text-transform: capitalize;
+    font-family: "Roboto", sans-serif;
+  }
+}

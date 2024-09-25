@@ -6,6 +6,7 @@ import { IoCreateOutline } from "react-icons/io5";
 import { IoStatsChartSharp } from "react-icons/io5";
 import { MdDashboardCustomize } from "react-icons/md";
 import { CiLogin } from "react-icons/ci";
+import { FaFileContract } from "react-icons/fa";
 
 
 const Sidebar = () => {
@@ -32,6 +33,12 @@ const Sidebar = () => {
             <NavLink className={"sidebar__link"} to={"chart"}>
             <IoStatsChartSharp />
               <span>chart</span>
+            </NavLink>
+          </li>
+          <li className="sidebar__item">
+            <NavLink className={"sidebar__link"} to={"contrakt"}>
+            <FaFileContract />
+              <span>Contrak</span>
             </NavLink>
           </li>
         <li className="sidebar__item">

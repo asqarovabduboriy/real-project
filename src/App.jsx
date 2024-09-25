@@ -9,6 +9,8 @@ import ManageProducts from "./page/Admin/manage-product/ManageProducts";
 import CreateProduct from "./page/Admin/create-product/CreateProduct";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Contrakt from "./components/contrakt/Contrakt";
+// import Singlerout from "./page/singleRoute/Singlerout";
 
 
 function App() {
@@ -23,7 +25,9 @@ function App() {
             <Route path="dashboard" element={<Dashboard />} />
             <Route path='manage' element={<ManageProducts/>}/>
             <Route path="create" element ={<CreateProduct/>}/>
+            <Route path="contrakt" element={<Contrakt/>}/>
           </Route>
+          {/* <Route path="/product/get/:id" element={<Singlerout/>}/> */}
         </Route>
       </Routes>
       <ToastContainer />
