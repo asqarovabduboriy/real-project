@@ -14,14 +14,16 @@ const Contrakt = () => {
       .then((res) => setData(res.data.all_contracts))
       .catch((err) => console.log(err));
   }, []);
+  
 
   const handleDelete = (id) => {
     fetch(`https://solihov.uz/contract/delete/${id}`, {
         method: 'DELETE', // DELETE so'rovini ishlatamiz
         headers: {
-            'Content-Type': 'application/json',
+            'Content-Type': 'text/plain',
             // agar kerak bo'lsa, boshqa headerlar
         }
+        
     })
     .then((response) => {
         if (!response.ok) {
@@ -32,6 +34,8 @@ const Contrakt = () => {
     .then((data) => console.log(data)) // muvaffaqiyatli javobni ko'rsatamiz
     .catch((err) => console.log(err)); // xatolikni ko'rsatamiz
 };
+
+
 
 
   const contract = data?.map((el, index) => (
@@ -71,7 +75,7 @@ const Contrakt = () => {
           variant="contained"
           color="error"
           onClick={() => handleDelete(el.id)}
-          className="btn"
+          className="btn" 
         >
           Delete
         </Button>
@@ -83,6 +87,7 @@ const Contrakt = () => {
     <>
       <div className="container">
         <div className="wrapper_contract">{contract}</div>
+
       </div>
       {
         open ? <TwoEdit open={open}  setOpen={setOpen} /> : null

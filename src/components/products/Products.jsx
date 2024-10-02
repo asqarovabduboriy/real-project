@@ -7,20 +7,23 @@ import { Link,useParams,useLocation,useSearchParams,useNavigate } from "react-ro
 import Modal from "../Modal/Modal";
 import { Button } from "@mui/material";
 import { IoMdClose } from "react-icons/io";
+import { useDeleteProductMutation, useUpdateProductMutation } from "../../context/products";
+import { toast } from "react-toastify";
 
 const Products = ({ data, isAdmin, setReload }) => {
   const [edit, setEdit] = useState(null);
   const [searchparams, setSearchparams] = useSearchParams();
   const [detaildata, setDetaildata] = useState(null);
 
+  const [ dleteProduct, {isSuccess} ] = useDeleteProductMutation();
+  const [editProduct, {isSuccess: isEditSuccess} ] = useUpdateProductMutation();
+
   const handleDelete = (id) => {
     console.log(id);
 
-    if (window.confirm("Are you sure?")) {
-      axios
-        .delete(`https://solihov.uz/product/delete/${id}`,{method: "DELETE"})
-        .then((res) => console.log(res.data ))
-        .catch((err) => console.log(err));
+    if (window.confirm("Ochirishga ruhsat berasizmi")) {
+       dleteProduct(id);
+       toast.success("Mufaqiyatli ochirildi")
   };
 }
 
@@ -36,7 +39,7 @@ const Products = ({ data, isAdmin, setReload }) => {
     }
   }, [searchparams]);
 
-  const productItems = data?.map((el, index) => (
+  const productItems = data?.all_products?.map((el, index) => (
     <div key={el.id} className="card">
         <img src={img1} alt="" onClick={() => setSearchparams({detail: el.id})} />
       <h3 title={el.name}>{el.model}</h3>
@@ -71,7 +74,7 @@ const Products = ({ data, isAdmin, setReload }) => {
         : null
       }
       {edit ? (
-        <Edit edit={edit} setEdit={setEdit} setReload={setReload} />
+        <Edit edit={edit} setEdit={setEdit} editProduct={editProduct} isSuccess={isEditSuccess} />
       ) : null}
     </>
   );
